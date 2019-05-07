@@ -1,0 +1,44 @@
+
+.app-indroduction{
+    ion-content{
+        --background: url('../../assets/images/intro-background.png') no-repeat scroll center center / cover;
+        ion-slides{
+            --bullet-background-active: var(--petmapp-color-red);	
+        }
+        ion-slide{
+            margin: 40% auto 65% auto;
+            display: block;
+            img{
+                height: 100px;
+                width: auto;
+            }
+            h1{
+                color: var(--petmapp-color-red);
+                width: 70%;
+                font-weight: bold;
+                margin: 20px auto 10px auto;
+            }
+            p{
+                width: 80%;
+                color: var(--petmapp-color-red);
+                margin: auto;
+            }
+        }
+        .button-dismiss, .button-next{
+            color: var(--petmapp-color-red);
+            position: fixed;
+            bottom: 1%;
+            z-index: 1;
+        }
+        .button-start{
+            position: fixed;
+            bottom: 2%;
+            left: 9.5%;
+            width: 80%;
+            z-index: 1;
+        }
+        .button-next{
+            right: 0;
+        }
+    }    
+}
