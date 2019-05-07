@@ -1,0 +1,11 @@
+form{
+    width: 80%;
+    margin: 5% auto 10% auto;
+    ion-item{
+        ion-input, ion-textbox, ion-select, ion-label{
+            color: var(--pm-color-red) !important;
+            --color: var(--pm-color-red) !important;
+            --placeholder-color: #b6b6b6;
+        }
+    }
+}
