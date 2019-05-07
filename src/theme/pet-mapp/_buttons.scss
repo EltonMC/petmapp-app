@@ -1,0 +1,20 @@
+.pm-button-default{
+    
+    --opacity: 0px;
+    --border-radius: 5px;
+    --color: var(--petmapp-color-yellow);
+    --color-activated: var(--petmapp-color-red);
+    --background: var(--petmapp-color-red);
+    --background-activated: var(--petmapp-color-yellow);
+    height: 47px;
+}
+
+.pm-button-outline{
+    --opacity: 0px;
+    --border-radius: 5px;
+    --color: var(--petmapp-color-red);
+    --color-activated: var(--petmapp-color-yellow);
+    --border-color: var(--petmapp-color-red);
+    --background-activated: var(--petmapp-color-yellow);
+    height: 47px;  
+}

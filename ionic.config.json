@@ -1,5 +1,7 @@
 {
-  "name": "petmapp",
-  "integrations": {},
+  "name": "pet-mapp",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
