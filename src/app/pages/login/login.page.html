@@ -1,0 +1,29 @@
+<ion-header class="pm-header-before-login">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <img src="assets/images/pm-logo.png" alt="">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+<h1> Entrar </h1>
+
+<form>
+  <ion-item>
+    <ion-input type="email" placeholder="E-mail"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-input type="password" placeholder="Senha"></ion-input>
+  </ion-item>
+</form>
+
+
+<ion-button class="button-login pm-button-default" expand="block" routerLink="/menu/home"> Entrar </ion-button>
+
+<span class="remember-pass" routerLink="/remember-password"> Esqueceu a senha ?</span>
+<span class="terms"> Ao conectar você aceita os <a>termos de uso.</a></span>
+
+</ion-content>

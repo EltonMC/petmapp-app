@@ -1,7 +1,8 @@
 form{
-    width: 80%;
+    width: 85%;
     margin: 5% auto 10% auto;
     ion-item{
+        --highlight-color-focused: var(--pm-color-red);
         ion-input, ion-textbox, ion-select, ion-label{
             color: var(--pm-color-red) !important;
             --color: var(--pm-color-red) !important;

@@ -1,0 +1,117 @@
+<ion-header class="pm-header-default">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reservas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="type" mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="new">
+      <ion-label>Agendadas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="last">
+      <ion-label>Passadas</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list class="petshop-list" lines="none" *ngIf="type == 'new'">
+    <div class="list">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="assets/images/atalaia.png">
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="row-name name">
+            Atalaia Rações
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-calendar.png" alt="">
+            26/05/2019 - Manhã
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-paw.png" alt="">
+            Banho e tosa higiênica
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-dog.png" alt="">
+            Bob
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-user.png" alt="">
+            Rafaela
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-button class="pm-button-default" expand="block"> Cancelar reserva </ion-button>
+    </div>
+
+    <div class="list">
+        <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="assets/images/atalaia.png">
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="row-name name">
+            Atalaia Rações
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-calendar.png" alt="">
+            26/05/2019 - Manhã
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-paw.png" alt="">
+            Banho e tosa higiênica
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-dog.png" alt="">
+            Bob
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-user.png" alt="">
+            Rafaela
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-button class="pm-button-default" expand="block"> Cancelar reserva </ion-button>
+    </div>
+
+
+  </ion-list>
+
+  <ion-list *ngIf="type == 'last'">
+    <div class="list">
+        <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="assets/images/atalaia.png">
+        </ion-thumbnail>
+        <ion-grid>
+          <ion-row class="row-name name">
+            Atalaia Rações
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-calendar.png" alt="">
+            26/05/2019 - Manhã
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-paw.png" alt="">
+            Banho e tosa higiênica
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-dog.png" alt="">
+            Bob
+          </ion-row>
+          <ion-row class="row-detail">
+            <img src="assets/images/reservation/icon-user.png" alt="">
+            Rafaela
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-button class="button-success pm-button-default" expand="block"> Reserva efetivada </ion-button>
+    </div>
+
+  </ion-list>
+
+</ion-content>

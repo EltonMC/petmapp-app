@@ -11,5 +11,8 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 /** Pet Mapp Theme */
+@import 'theme/pet-mapp/fonts';
+@import 'theme/pet-mapp/header';
 @import 'theme/pet-mapp/buttons';
 @import 'theme/pet-mapp/form';
+@import 'theme/pet-mapp/segment';

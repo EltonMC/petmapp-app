@@ -1,0 +1,41 @@
+
+.pet-list{
+    ion-thumbnail{
+        --border-radius: 100%;
+        --size: 50px;
+    }
+    ion-grid{
+        .title{
+            color: #212121;
+        }
+        .row-details{
+            color: #727272;
+            font-size: 12px;
+            margin: 10px 0px;
+            ion-col{
+                margin: auto 0px;
+                padding: 0;
+                display: flex;
+            }
+            img{
+                margin: auto 3px auto 0px;
+                width: auto;
+                height: 10px;
+            }
+        }
+    }
+    .span-offer{
+        font-size: 12px;
+        color: #ffca27;
+        background: var(--pm-color-red);
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin: auto 0px;
+    }
+}
+
+.pm-button-reverse{
+    position: fixed;
+    right: 10%;
+    bottom: 2.5%;
+}

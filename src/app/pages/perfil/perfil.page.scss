@@ -1,0 +1,20 @@
+ion-thumbnail{
+    --border-radius: 100%;
+    --size: 85px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.button-avatar{
+    width: 80px;
+    height: 20px;
+    font-size: 10px !important;
+    text-transform: capitalize;
+    letter-spacing: 1;
+}
+
+.pm-button-default{
+    margin-bottom: 20px;
+}

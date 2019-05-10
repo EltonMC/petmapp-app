@@ -1,0 +1,32 @@
+.pm-header-before-login {
+    ion-toolbar {
+        --background: url('assets/images/header-background.png') no-repeat scroll center center / cover;
+        --min-height: 180px;
+        --border-color: var(--pm-color-yellow);
+
+        ion-back-button {
+            --color: var(--pm-color-red);
+        }
+
+        img {
+            width: 50%;
+            display: flex;
+            margin-left: 15%;
+            text-align: center;
+        }
+    }
+}
+
+.pm-header-default {
+
+    ion-toolbar {
+        --background: var(--pm-color-yellow);
+        --color: var(--pm-color-red);
+        --border-color: var(--pm-color-yellow);
+
+        ion-back-button {
+            --color: var(--pm-color-red);
+        }
+
+    }
+}

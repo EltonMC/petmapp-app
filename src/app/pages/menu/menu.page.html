@@ -1,0 +1,40 @@
+<ion-split-pane>
+  <ion-menu contentId="content">
+
+    <ion-header class="pm-header-menu">
+      <ion-toolbar>
+        <ion-thumbnail slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-thumbnail>
+        <ion-title>Rafael Silva</ion-title>
+        <ion-icon name="settings" slot="end" routerLink="/perfil"></ion-icon>
+      </ion-toolbar>
+
+
+    </ion-header>
+
+    <ion-content>
+      <ion-list lines="full">
+        <ion-item *ngFor="let p of pages" [routerLink]="p.url">
+          <img src="{{ p.icon }}" slot="start">
+          <ion-label>
+            {{ p.title }}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-content>
+
+    <ion-footer>
+      <ion-item routerLink="/login" routerDirection="root">
+        <img src="assets/images/configuration/icon-logout.png" slot="start">
+        <ion-label>
+          Sair
+        </ion-label>
+      </ion-item>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="content" main></ion-router-outlet>
+
+</ion-split-pane>

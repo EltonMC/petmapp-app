@@ -1,0 +1,57 @@
+<ion-header class="pm-header-default">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Olá, Rafael</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="type" mode="md" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="shower">
+      <ion-label>Banho</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="cough">
+      <ion-label>Tosa</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-item class="search-bar">
+    <ion-icon name="search" slot="start"></ion-icon>
+    <ion-input placeholder="Buscar por nome, serviço ou endereço..."></ion-input>
+    <ion-icon class="icon-filter" name="funnel" slot="end"></ion-icon>
+  </ion-item>
+
+  <ion-list class="petshop-list" lines="full" *ngIf="type == 'shower'">
+    <ion-item routerLink="/petshop">
+      <ion-thumbnail slot="start" class="avatar">
+        <img src="assets/images/atalaia.png">
+      </ion-thumbnail>
+      <ion-grid>
+        <ion-row class="row-name name">
+          Atalaia Rações
+        </ion-row>
+        <ion-row class="row-details">
+          <ion-col class="rating">
+            <img src="assets/images/home/icon-rating.png" alt="">
+            4,5
+          </ion-col>
+          <ion-col size="4"  class="map">
+            <img src="assets/images/home/icon-pin.png" alt="">
+            Atalaia
+          </ion-col>
+          <ion-col size="6" size-sm class="services">
+            <img src="assets/images/home/icon-pet.png" alt="">
+            183 serviços
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <span class="span-offer" slot="end"> Até 30% </span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngIf="type == 'cough'">
+
+  </ion-list>
+</ion-content>

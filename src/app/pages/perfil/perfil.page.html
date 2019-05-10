@@ -1,0 +1,64 @@
+<ion-header class="pm-header-default">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Minha Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-thumbnail class="avatar">
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+  </ion-thumbnail>
+
+  <ion-button class="button-avatar pm-button-default" expand="block"> Alterar foto </ion-button>
+
+  <form>
+    <ion-item>
+      <ion-input type="text" placeholder="Nome completo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Telefone"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Genêro</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Masculino</ion-select-option>
+        <ion-select-option value="m">Feminino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Estado</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="se">Sergipe</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cidade</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="aracaju">Aracaju</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Rua"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Mudar senha"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Repetir nova senha"></ion-input>
+    </ion-item>
+  </form>
+
+  <ion-button class="pm-button-default" expand="block"> Confirmar </ion-button>
+
+</ion-content>

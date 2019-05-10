@@ -1,0 +1,31 @@
+<ion-content>
+    <ion-slides #slides pager="true" [options]="slideOpts" (ionSlideWillChange)="checkIndex()">
+      <ion-slide>
+        <img src="assets/images/introduction/1-1-intro.png" alt="">
+        <h1>DESCONTOS EM PETSHOPS</h1>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/introduction/1-2-intro.png" alt="">
+        <h1>ESCOLHA O PETSHOP MAIS PRÓXIMO</h1>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/introduction/1-3-intro.png" alt="">
+        <h1>AGENDE PELO APP</h1>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/introduction/1-4-intro.png" alt="">
+        <h1>APOIE A CAUSA ANIMAL</h1>
+        <p> Parte do valor de cada reserva efetivada, é convertida em doações para Ongs de proteção aos animais. </p>
+      </ion-slide>
+    </ion-slides>
+  
+    <div class="slides-buttons" *ngIf="slideIndex < 3; else dismissIntro">
+      <ion-button class="button-dismiss" fill="clear" (click)="slides.slideTo(3)"> Pular </ion-button>
+      <ion-button class="button-next" fill="clear" (click)="slides.slideNext()"> Próximo </ion-button>
+    </div>
+  
+    <ng-template #dismissIntro>
+      <ion-button class="button-start pm-button-default" expand="block" routerLink="/welcome"> Começar </ion-button>
+    </ng-template>
+  
+  </ion-content>

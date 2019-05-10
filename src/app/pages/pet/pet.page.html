@@ -1,0 +1,81 @@
+<ion-header class="pm-header-default">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar Pet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-thumbnail class="avatar">
+    <img src="assets/images/pet.png">
+  </ion-thumbnail>
+
+  <ion-button class="button-avatar pm-button-default" expand="block"> Alterar foto </ion-button>
+
+  <form>
+    <ion-item>
+      <ion-input type="text" placeholder="Nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="number" placeholder="Idade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selecione o tipo</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Cachorro</ion-select-option>
+        <ion-select-option value="m">Gato</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Selecione a raça</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="se">Beagle</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gênero</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Masculino</ion-select-option>
+        <ion-select-option value="m">Feminino</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Temperamento</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Calmo</ion-select-option>
+        <ion-select-option value="m">Bravo</ion-select-option>
+        <ion-select-option value="m">Bipolar</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Castrado</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Sim</ion-select-option>
+        <ion-select-option value="m">Não</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Pelagem</ion-label>
+      <ion-select placeholder="Selecione um">
+        <ion-select-option value="f">Longo</ion-select-option>
+        <ion-select-option value="m">Curto</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" placeholder="Observações"></ion-input>
+    </ion-item>
+
+  </form>
+
+  <ion-button class="pm-button-default" expand="block"> Confirmar </ion-button>
+
+</ion-content>
