@@ -1,0 +1,7 @@
+{
+  "appId": "io.pet.mapp",
+  "appName": "pet-mapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

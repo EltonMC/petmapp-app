@@ -11,14 +11,16 @@
         img {
             width: 50%;
             display: flex;
-            margin-left: 15%;
+            position: fixed;
+            top: 8%;
+            left: 25%;
+            display: flex;
             text-align: center;
         }
     }
 }
 
 .pm-header-default {
-
     ion-toolbar {
         --background: var(--pm-color-yellow);
         --color: var(--pm-color-red);
