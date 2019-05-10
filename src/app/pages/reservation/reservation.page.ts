@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservationPage implements OnInit {
 
+  date = '';
+  turn = '';
+  pet = '';
+  
   constructor() { }
 
   ngOnInit() {

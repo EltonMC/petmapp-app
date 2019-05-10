@@ -1,0 +1,113 @@
+.petshop{
+    ion-thumbnail{
+        --border-radius: 100%;
+        --size: 50px;
+    }
+    ion-grid{
+        .title{
+            color: #212121;
+        }
+        .row-details{
+            color: #727272;
+            font-size: 12px;
+            margin: 10px 0px;
+            ion-col{
+                margin: auto 0px;
+                padding: 0;
+                display: flex;
+            }
+            img{
+                margin: auto 3px auto 0px;
+                width: auto;
+                height: 10px;
+            }
+        }
+    }
+    .span-offer{
+        font-size: 12px;
+        color: #ffca27;
+        background: var(--pm-color-red);
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin: auto 0px;
+    }
+}
+
+.petshop-info{
+    padding: 10px 0px;
+    border-bottom: 1px solid #dadada;
+}
+
+
+.pet-list{
+    ion-thumbnail{
+        --border-radius: 100%;
+        --size: 50px;
+    }
+    ion-grid{
+        .title{
+            color: #212121;
+        }
+        .row-details{
+            color: #727272;
+            font-size: 12px;
+            margin: 10px 0px;
+            ion-col{
+                margin: auto 0px;
+                padding: 0;
+                display: flex;
+            }
+            img{
+                margin: auto 3px auto 0px;
+                width: auto;
+                height: 10px;
+            }
+        }
+    }
+    ion-button{
+        margin: 10px auto;
+    }
+    .span-offer{
+        font-size: 12px;
+        color: #ffca27;
+        background: var(--pm-color-red);
+        padding: 2px 5px;
+        border-radius: 5px;
+        margin: auto 0px;
+    }
+}
+
+.time-list, .turn-list, .pet-list{
+    padding: 0;
+}
+
+.time-list{
+    ion-label{
+        color: var(--pm-color-red);
+    }
+    ion-datetime{
+        color: #b6b6b6 !important;
+        --color: #b6b6b6 !important;
+    }
+}
+
+.item-title{
+    text-align: center;
+    margin: auto;
+    display: block;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    padding: 20px;
+    color: var(--pm-color-red);
+    font-weight: 700;
+}
+
+.turn-list{
+    .item-title{
+        border-top: none;
+    }
+}
+
+ion-radio{
+    --color-checked: var(--pm-color-red);
+}

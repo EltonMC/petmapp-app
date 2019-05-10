@@ -9,17 +9,14 @@
 <ion-content>
   <ion-slides pager="true" [options]="slideOpts">
     <ion-slide>
-      <h1>Slide 1</h1>
+      <img src="assets/images/atalaia-racoes.jpg" alt="">
     </ion-slide>
     <ion-slide>
-      <h1>Slide 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
+      <img src="assets/images/atalaia-racoes.jpg" alt="">
     </ion-slide>
   </ion-slides>
   <ion-list class="petshop" lines="none">
-    <ion-item routerLink="/petshop">
+    <ion-item>
       <ion-thumbnail slot="start" class="avatar">
         <img src="assets/images/atalaia.png">
       </ion-thumbnail>
@@ -49,17 +46,17 @@
   <div class="service" *ngIf="type == 'services'">
     <ion-title class="segment-title"> Serviços </ion-title>
     <ion-list lines="full">
-      <ion-item>
+      <ion-item routerLink="/reservation">
         <span slot="start"> Banho </span>
         <span class="span-offer" slot="end"> Com 30% </span>
         <ion-icon name="arrow-dropright" slot="end"></ion-icon>
       </ion-item>
-      <ion-item>
+      <ion-item routerLink="/reservation">
         <span slot="start"> Tosa </span>
         <span class="span-offer" slot="end"> Com 10% </span>
         <ion-icon name="arrow-dropright" slot="end"></ion-icon>
       </ion-item>
-      <ion-item>
+      <ion-item routerLink="/reservation">
         <span slot="start"> Banho + Hidratação </span>
         <ion-icon name="arrow-dropright" slot="end"></ion-icon>
       </ion-item>
@@ -68,15 +65,37 @@
 
   <div class="info" *ngIf="type == 'info'">
     <ion-title class="segment-title"> Informações </ion-title>
-    <ion-list class="petshop" lines="none">
-      <ion-item routerLink="/petshop">
+    <ion-list lines="full">
+      <ion-item>
         <img slot="start" src="assets/images/home/icon-phone.png">
         <ion-grid>
           <ion-row class="row-name name">
             Telefone
           </ion-row>
           <ion-row class="row-details">
-              (79) 3030-3030
+            (79) 3030-3030
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <img slot="start" src="assets/images/home/icon-pin.png">
+        <ion-grid>
+          <ion-row class="row-name name">
+            Endereço
+          </ion-row>
+          <ion-row class="row-details">
+            Rua Fenelon Santos, 504 - Salgado Filho. Aracaju - SE, 49020-350
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <img slot="start" src="assets/images/home/icon-clock.png">
+        <ion-grid>
+          <ion-row class="row-name name">
+            Horário de Funcionamento
+          </ion-row>
+          <ion-row class="row-details">
+            Segunda a sexta: 8h às 18h; Sábado: 8h às 12h
           </ion-row>
         </ion-grid>
       </ion-item>
@@ -88,13 +107,13 @@
   </div>
 
   <ion-segment [(ngModel)]="type" mode="md" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="services">
+    <ion-segment-button mode="md" value="services">
       <ion-label>Serviços</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="info">
+    <ion-segment-button mode="md" value="info">
       <ion-label>Informações</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="ratings">
+    <ion-segment-button mode="md" value="ratings">
       <ion-label>Avaliações</ion-label>
     </ion-segment-button>
   </ion-segment>

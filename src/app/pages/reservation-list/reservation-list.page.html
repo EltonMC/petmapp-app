@@ -9,10 +9,10 @@
 
 <ion-content>
   <ion-segment [(ngModel)]="type" mode="md" (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="new">
+    <ion-segment-button mode="md" value="new">
       <ion-label>Agendadas</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="last">
+    <ion-segment-button mode="md" value="last">
       <ion-label>Passadas</ion-label>
     </ion-segment-button>
   </ion-segment>
