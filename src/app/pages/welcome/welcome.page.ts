@@ -71,11 +71,7 @@ export class WelcomePage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.slides.getActiveIndex().then(res => {
-      console.log(res);
-    });
-  }
+  ngOnInit() {}
 
   checkIndex(){
     this.slides.getActiveIndex().then(res => {
