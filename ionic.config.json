@@ -1,7 +1,9 @@
 {
   "name": "pet-mapp",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
+
