@@ -1,7 +1,7 @@
 .pm-header-before-login {
     ion-toolbar {
         --background: url('assets/images/header-background.png') no-repeat scroll center center / cover;
-        --min-height: 180px;
+        --min-height: 23ch;
         --border-color: var(--pm-color-yellow);
 
         ion-back-button {
