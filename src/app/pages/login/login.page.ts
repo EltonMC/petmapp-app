@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-// import { RegisterPage } from '../register/register.page';
-import { NgForm, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
-import { AlertService } from 'src/app/services/alert.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,9 +13,7 @@ export class LoginPage implements OnInit {
   loginForm: any;
 
   constructor(
-    private modalController: ModalController,
     private authService: AuthService,
-    private alertService: AlertService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}
@@ -27,7 +22,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.maxLength(255), Validators.email]],
-      password: [null,[Validators.required, Validators.minLength(3), Validators.maxLength(255)]]
+      password: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(255)]]
     });
   }
   // Dismiss Login Modal
@@ -56,7 +51,6 @@ export class LoginPage implements OnInit {
       },
       () => {
         this.router.navigate(['/menu/home']);
-
       }
     );
   }
