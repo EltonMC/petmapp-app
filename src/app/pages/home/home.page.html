@@ -24,31 +24,7 @@
   </ion-item>
 
   <ion-list class="petshop-list" lines="full" *ngIf="type == 'shower'">
-    <ion-item routerLink="/petshop">
-      <ion-thumbnail slot="start" class="avatar">
-        <img src="assets/images/atalaia.png">
-      </ion-thumbnail>
-      <ion-grid>
-        <ion-row class="row-name name">
-          Atalaia Rações
-        </ion-row>
-        <ion-row class="row-details">
-          <ion-col class="rating">
-            <img src="assets/images/home/icon-rating.png" alt="">
-            4,5
-          </ion-col>
-          <ion-col size="4"  class="map">
-            <img src="assets/images/home/icon-pin.png" alt="">
-            Atalaia
-          </ion-col>
-          <ion-col size="6" size-sm class="services">
-            <img src="assets/images/home/icon-pet.png" alt="">
-            183 serviços
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <span class="span-offer" slot="end"> Até 30% </span>
-    </ion-item>
+    <petshop-item *ngFor="let petshop of petshops" [petshop]="petshop"></petshop-item>
   </ion-list>
 
   <ion-list *ngIf="type == 'cough'">

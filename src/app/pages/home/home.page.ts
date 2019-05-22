@@ -21,6 +21,7 @@ export class HomePage implements OnInit {
     this.petshopService.getPetshops().
       subscribe(petshops => {
         console.log(petshops);
+        this.petshops = petshops.data;
       });
   }
 }

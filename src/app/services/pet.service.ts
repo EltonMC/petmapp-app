@@ -18,8 +18,8 @@ export class PetService {
     getPetshops() {
         return this.http.get<Pet[]>(this.env.API_URL + 'pet')
             .pipe(
-                tap(petshops => {
-                    return petshops;
+                tap(pet => {
+                    return pet;
                 })
             );
     }
