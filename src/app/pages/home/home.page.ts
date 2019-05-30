@@ -1,6 +1,5 @@
 import { PetshopService } from './../../services/petshop.service';
 import { Component, OnInit } from '@angular/core';
-import { Petshop } from 'src/app/models/petshop';
 
 @Component({
   selector: 'app-home',
@@ -10,18 +9,20 @@ import { Petshop } from 'src/app/models/petshop';
 export class HomePage implements OnInit {
 
   type: String = 'shower';
-  petshops: Petshop[];
+  petshops: Response;
   constructor(private petshopService: PetshopService) { }
 
   ngOnInit() {
     this.getPetshops();
   }
 
-  getPetshops(): void {
-    this.petshopService.getPetshops().
-      subscribe(petshops => {
-        console.log(petshops);
-        this.petshops = petshops.data;
-      });
+  async getPetshops() {
+    try{
+      const { data, ...meta } = await this.petshopService.getPetshops();
+      this.petshops = data;
+    } catch {
+      console.log("Err");
+    }
+
   }
 }

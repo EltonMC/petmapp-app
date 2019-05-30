@@ -19,4 +19,6 @@ export class PetshopService {
     getPetshops() {
         return this.httpClient.get<any>(this.env.API_URL + 'petshops').toPromise();
     }
+
+    
 }

@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
 })
 export class EnvService {
 //   API_URL = 'https://pet-mapp.herokuapp.com/';
-    API_URL = 'http://localhost:8100/';
+    API_URL = 'http://localhost:8000/';
     constructor() { }
 }

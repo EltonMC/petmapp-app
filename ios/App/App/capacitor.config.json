@@ -3,5 +3,9 @@
   "appName": "pet-mapp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "www"
+  "webDir": "www",
+  "server": {
+    "url": "http://192.168.15.10:8106",
+    "originalUrl": "http://192.168.15.10:8105"
+  }
 }
