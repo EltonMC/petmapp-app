@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs/operators';
 import { EnvService } from './env.service';
-import { Petshop } from '../models/petshop';
+import { tap } from 'rxjs/operators';
+
 
 @Injectable({
     providedIn: 'root'
@@ -11,17 +11,12 @@ import { Petshop } from '../models/petshop';
 export class PetshopService {
 
     constructor(
-        private http: HttpClient,
+        private httpClient: HttpClient,
         private env: EnvService,
     ) { }
 
 
     getPetshops() {
-        return this.http.get<Petshop[]>(this.env.API_URL + 'petshops')
-            .pipe(
-                tap(petshops => {
-                    return petshops;
-                })
-            );
+        return this.httpClient.get<any>(this.env.API_URL + 'petshops').toPromise();
     }
 }
