@@ -1,5 +1,7 @@
 import { PetshopService } from './../../services/petshop.service';
 import { Component, OnInit } from '@angular/core';
+import { Petshop } from '../../models/petshop';
+
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomePage implements OnInit {
 
   type: String = 'shower';
-  petshops: Response;
+  petshops: Petshop;
   constructor(private petshopService: PetshopService) { }
 
   ngOnInit() {

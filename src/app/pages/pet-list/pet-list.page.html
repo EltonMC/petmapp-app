@@ -9,31 +9,10 @@
 
 <ion-content>
   <ion-list class="pet-list" lines="full">
-    <ion-item>
-      <ion-thumbnail slot="start" class="avatar">
-        <img src="assets/images/pet.png">
-      </ion-thumbnail>
-      <ion-grid>
-        <ion-row class="row-name name">
-          Bob
-        </ion-row>
-        <ion-row class="row-details">
-          <ion-col>
-            <img src="assets/images/home/icon-pet.png" alt="">
-            Cachorro
-          </ion-col>
-          <ion-col>
-            <img src="assets/images/home/icon-pet.png" alt="">
-            Beagle
-          </ion-col>
-          <ion-col>
-            <img src="assets/images/home/icon-pet.png" alt="">
-            Macho
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <span class="span-offer" slot="end"> Excluir </span>
-    </ion-item>
+    <pet-item routerLink="/pet"
+      *ngFor="let pet of pets"
+      [pet]="pet"
+    ></pet-item>
   </ion-list>
   <ion-button class="pm-button-reverse" expand="block" routerLink="/pet"> Adicionar Pet </ion-button>
 </ion-content>

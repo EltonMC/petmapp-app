@@ -5,12 +5,14 @@ import { InputErrComponent } from './input-err/input-err.component';
 import { SubmitErrComponent } from './submit-err/submit-err.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { PetItemComponent } from './pet-item/pet-item.component';
 
 @NgModule({
   declarations: [
     InputErrComponent,
     SubmitErrComponent,
-    PetshopItemComponent
+    PetshopItemComponent,
+    PetItemComponent
   ],
   imports: [
     CommonModule,
@@ -20,12 +22,14 @@ import { IonicModule } from '@ionic/angular';
   exports: [
     InputErrComponent,
     SubmitErrComponent,
-    PetshopItemComponent
+    PetshopItemComponent,
+    PetItemComponent
   ],
   entryComponents: [
     InputErrComponent,
     SubmitErrComponent,
-    PetshopItemComponent
+    PetshopItemComponent,
+    PetItemComponent
   ],
 })
 export class ComponentsModule { }

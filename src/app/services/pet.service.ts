@@ -9,7 +9,12 @@ import { EnvService } from './env.service';
 export class PetService {
 
     constructor(
-        private http: HttpClient,
+        private httpClient: HttpClient,
         private env: EnvService,
     ) { }
+
+    getPets() {
+        return this.httpClient.get<any>(this.env.API_URL + 'pets').toPromise();
+    }
+
 }

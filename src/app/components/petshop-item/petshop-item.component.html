@@ -1,6 +1,6 @@
 <ion-item>
   <ion-thumbnail slot="start" class="avatar">
-    <img src="assets/images/atalaia.png">
+    <img [src]="petshop.logo">
   </ion-thumbnail>
   <ion-grid>
     <ion-row class="row-name name">
@@ -9,7 +9,7 @@
     <ion-row class="row-details">
       <ion-col class="rating">
         <img src="assets/images/home/icon-rating.png" alt="">
-        4,5
+        {{ petshop.rating_average }}
       </ion-col>
       <ion-col size="4"  class="map">
         <img src="assets/images/home/icon-pin.png" alt="">
@@ -17,9 +17,9 @@
       </ion-col>
       <ion-col size="6" size-sm class="services">
         <img src="assets/images/home/icon-pet.png" alt="">
-        183 serviços
+        {{ petshop.num_services }} serviços
       </ion-col>
     </ion-row>
   </ion-grid>
-  <span class="span-offer" slot="end"> Até 30% </span>
+  <span class="span-offer" slot="end"> Até {{ petshop.max_discount }}% </span>
 </ion-item>
