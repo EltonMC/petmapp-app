@@ -1,0 +1,25 @@
+<ion-item>
+  <ion-thumbnail slot="start" class="avatar">
+    <img src="assets/images/pet.png">
+  </ion-thumbnail>
+  <ion-grid>
+    <ion-row class="row-name name">
+      {{ pet.name }}
+    </ion-row>
+    <ion-row class="row-details">
+      <ion-col>
+        <img src="assets/images/home/icon-pet.png" alt="">
+        {{ pet.type }}
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/home/icon-pet.png" alt="">
+        {{ pet.breed }}
+      </ion-col>
+      <ion-col>
+        <img src="assets/images/home/icon-pet.png" alt="">
+        {{ pet.gender }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <span class="span-offer" slot="end"> Excluir </span>
+</ion-item>
