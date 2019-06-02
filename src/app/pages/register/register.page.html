@@ -8,30 +8,111 @@
 </ion-header>
 <ion-content>
 
-<h1> Criar Conta </h1>
+  <h1> Criar Conta </h1>
+  <ion-slides #slides [options]="slidesOpts" (ionSlideWillChange)="checkIndex()">
+    <ion-slide>
+      <form [formGroup]="slideOneForm">
+        <ion-item>
+          <ion-input formControlName="name" type="text" placeholder="Nome completo"></ion-input>
+        </ion-item>
 
-<form>
-  <ion-item>
-    <ion-input type="text" placeholder="Nome completo"></ion-input>
-  </ion-item>
+        <div *ngIf="!slideOneForm.controls.name.valid  && (slideOneForm.controls.name.dirty || submitAttempt)">
+          <p class="validator-error">Por favor digite um nome válido.</p>
+        </div>
+  
+        <ion-item>
+          <ion-input formControlName="email" type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-input type="email" placeholder="E-mail"></ion-input>
-  </ion-item>
+        <div *ngIf="!slideOneForm.controls.email.valid  && (slideOneForm.controls.email.dirty || submitAttempt)">
+          <p class="validator-error">Por favor digite um email válido.</p>
+        </div>
+  
+        <ion-item>
+          <ion-input formControlName="phone" type="number" placeholder="Telefone"></ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-input type="number" placeholder="Telefone"></ion-input>
-  </ion-item>
+        <div *ngIf="!slideOneForm.controls.phone.valid  && (slideOneForm.controls.phone.dirty || submitAttempt)">
+          <p class="validator-error">Por favor digite um número válido.</p>
+        </div>
+  
+        <ion-item>
+          <ion-label>Genêro</ion-label>
+          <ion-select formControlName="genre" placeholder="Selecione um">
+            <ion-select-option value="f">Masculino</ion-select-option>
+            <ion-select-option value="m">Feminino</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-  <ion-item>
-    <ion-label>Genêro</ion-label>
-    <ion-select placeholder="Selecione um">
-      <ion-select-option value="f">Masculino</ion-select-option>
-      <ion-select-option value="m">Feminino</ion-select-option>
-    </ion-select>
-  </ion-item>
-</form>
+        <div *ngIf="!slideOneForm.controls.genre.valid  && (slideOneForm.controls.genre.dirty || submitAttempt)">
+          <p class="validator-error">Selecione uma opção.</p>
+        </div>
+      </form>
+    </ion-slide>
+    <ion-slide>
+      <form [formGroup]="slideTwoForm">
+        <ion-item>
+          <ion-label>Estado</ion-label>
+          <ion-select formControlName="state" placeholder="Selecione um">
+            <ion-select-option value="f">Bahia</ion-select-option>
+            <ion-select-option value="m">Sergipe</ion-select-option>
+          </ion-select>
+        </ion-item>
 
-<ion-button class="button-login pm-button-default" expand="block"> Concluir </ion-button>
+        <div *ngIf="!slideTwoForm.controls.state.valid  && (slideTwoForm.controls.state.dirty || submitAttempt)">
+          <p class="validator-error">Selecione uma opção.</p>
+        </div>
+  
+        <ion-item>
+          <ion-label>Cidade</ion-label>
+          <ion-select formControlName="city" placeholder="Selecione um">
+            <ion-select-option value="f">Aracaju</ion-select-option>
+            <ion-select-option value="m">São Crist</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <div *ngIf="!slideTwoForm.controls.city.valid  && (slideTwoForm.controls.city.dirty || submitAttempt)">
+          <p class="validator-error">Selecione uma opção.</p>
+        </div>
+  
+        <ion-item>
+          <ion-input formControlName="neighbor" type="text" placeholder="Bairro"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!slideTwoForm.controls.neighbor.valid  && (slideTwoForm.controls.neighbor.dirty || submitAttempt)">
+          <p class="validator-error">Por favor digite um bairro válido..</p>
+        </div>
+
+        <ion-item>
+          <ion-input formControlName="password" type="password" placeholder="Crie uma senha"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!slideTwoForm.controls.password.valid  && (slideTwoForm.controls.password.dirty || submitAttempt)">
+          <p class="validator-error">Por favor digite uma senha válida.</p>
+        </div>
+
+        <ion-item>
+          <ion-input formControlName="confirmPassword" type="password" placeholder="Repita a senha"></ion-input>
+        </ion-item>
+
+        <div *ngIf="submitAttempt && slideTwoForm.controls.confirmPassword.errors">
+          <div *ngIf="slideTwoForm.controls.confirmPassword.errors.mustMatch">
+            <p class="validator-error">As duas senhas informadas são diferentes.</p>
+          </div>
+        </div>
+
+      </form>  
+    </ion-slide>
+  </ion-slides>
+
+  <div class="slides-buttons" *ngIf="slideIndex < 1; else finish">
+    <ion-button class="button-login pm-button-default" expand="block" (click)="slides.slideNext()"> Próximo </ion-button>
+  </div>
+
+  <ng-template #finish>
+    <ion-button class="button-start pm-button-default" expand="block" (click)="save()"> Concluir </ion-button>
+  </ng-template>
+
+
 
 </ion-content>
