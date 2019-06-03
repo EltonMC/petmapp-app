@@ -25,9 +25,10 @@
   </ion-item>
 
   <ion-list class="petshop-list" lines="full" *ngIf="type === 'shower'">
-    <petshop-item routerLink="/petshop"
+    <petshop-item
       *ngFor="let petshop of petshops"
       [petshop]="petshop"
+      (click)="toPetshop(petshop)"
     ></petshop-item>
   </ion-list>
 

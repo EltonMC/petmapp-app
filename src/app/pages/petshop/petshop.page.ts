@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Petshop } from 'src/app/models/petshop';
 
 @Component({
   selector: 'app-petshop',
@@ -11,9 +13,20 @@ export class PetshopPage implements OnInit {
     initialSlide: 1,
     speed: 400
   };
-  constructor() { }
+  
+  petshop: Petshop;
+
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state.petshop) {
+        this.petshop = this.router.getCurrentNavigation().extras.state.petshop;
+      }
+    });
+  }
 
   ngOnInit() {
+    console.log(this.petshop);
+
   }
 
 }
