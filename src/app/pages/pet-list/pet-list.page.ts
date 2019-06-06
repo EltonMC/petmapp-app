@@ -19,7 +19,7 @@ export class PetListPage implements OnInit {
 
   async getPets() {
     try{
-      const { data, ...meta } = await this.petService.getPets();
+      const { data, ...meta } = await this.petService.get();
       this.pets = data;
     } catch {
       console.log("Err");

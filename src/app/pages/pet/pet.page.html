@@ -1,81 +1,138 @@
 <ion-header class="pm-header-default">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-buttone></ion-back-buttone>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Adicionar Pet</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
   <ion-thumbnail class="avatar">
-    <img src="assets/images/pet.png">
+    <img src="assets/images/pet.png" />
   </ion-thumbnail>
 
-  <ion-button class="button-avatar pm-button-default" expand="block"> Alterar foto </ion-button>
+  <ion-button class="button-avatar pm-button-default" expand="block">
+    Alterar foto
+  </ion-button>
 
-  <form>
+  <form [formGroup]="petForm">
     <ion-item>
-      <ion-input type="text" placeholder="Nome"></ion-input>
+      <ion-input
+        type="text"
+        placeholder="Nome"
+        formControlName="name"
+      ></ion-input>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.name"
+      msgErr="Nome inválido."
+    ></input-err>
 
     <ion-item>
-      <ion-input type="number" placeholder="Idade"></ion-input>
+      <ion-label>Selecione o aniversário</ion-label>
+      <ion-datetime
+        displayFormat="DD/MM/YYYY"
+        formControlName="birthday"
+        min="1990"
+        max="2029"
+      ></ion-datetime>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.birthday"
+      msgErr="Idade inválida."
+    ></input-err>
 
     <ion-item>
       <ion-label>Selecione o tipo</ion-label>
-      <ion-select placeholder="Selecione um">
-        <ion-select-option value="f">Cachorro</ion-select-option>
-        <ion-select-option value="m">Gato</ion-select-option>
+      <ion-select placeholder="Selecione um" formControlName="type">
+        <ion-select-option value="dog">Cachorro</ion-select-option>
+        <ion-select-option value="cat">Gato</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.type"
+      msgErr="Tipo inválido."
+    ></input-err>
 
     <ion-item>
       <ion-label>Selecione a raça</ion-label>
-      <ion-select placeholder="Selecione um">
+      <ion-select placeholder="Selecione um" formControlName="breed">
         <ion-select-option value="se">Beagle</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.breed"
+      msgErr="Raça inválida."
+    ></input-err>
 
     <ion-item>
       <ion-label>Gênero</ion-label>
-      <ion-select placeholder="Selecione um">
-        <ion-select-option value="f">Masculino</ion-select-option>
-        <ion-select-option value="m">Feminino</ion-select-option>
+      <ion-select placeholder="Selecione um" formControlName="gender">
+        <ion-select-option value="male">Masculino</ion-select-option>
+        <ion-select-option value="female">Feminino</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.gender"
+      msgErr="Gênero inválido."
+    ></input-err>
 
     <ion-item>
       <ion-label>Temperamento</ion-label>
-      <ion-select placeholder="Selecione um">
+      <ion-select placeholder="Selecione um" formControlName="temper">
         <ion-select-option value="f">Calmo</ion-select-option>
         <ion-select-option value="m">Bravo</ion-select-option>
-        <ion-select-option value="m">Bipolar</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.temper"
+      msgErr="Temperamento inválido."
+    ></input-err>
 
     <ion-item>
       <ion-label>Castrado</ion-label>
-      <ion-select placeholder="Selecione um">
+      <ion-select placeholder="Selecione um" formControlName="castrated">
         <ion-select-option value="f">Sim</ion-select-option>
         <ion-select-option value="m">Não</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="petForm.controls.castrated"
+      msgErr="Tipo inválido."
+    ></input-err>
+
     <ion-item>
       <ion-label>Pelagem</ion-label>
-      <ion-select placeholder="Selecione um">
-        <ion-select-option value="f">Longo</ion-select-option>
-        <ion-select-option value="m">Curto</ion-select-option>
+      <ion-select placeholder="Selecione um" formControlName="coat">
+        <ion-select-option value="long">Longo</ion-select-option>
+        <ion-select-option value="short">Curto</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item>
-      <ion-input type="text" placeholder="Observações"></ion-input>
-    </ion-item>
+    <input-err
+      [input]="petForm.controls.coat"
+      msgErr="Pelagem inválida."
+    ></input-err>
 
+    <ion-item>
+      <ion-input
+        type="text"
+        placeholder="Observações"
+        formControlName="observation"
+      ></ion-input>
+    </ion-item>
+    <input-err
+      [input]="petForm.controls.observation"
+      msgErr="Observação inválida."
+    ></input-err>
   </form>
 
-  <ion-button class="pm-button-default" expand="block"> Confirmar </ion-button>
-
+  <ion-button
+    class="pm-button-default"
+    expand="block"
+    (click)="submit(petForm.value)"
+    [disabled]="!petForm.value"
+  >
+    Confirmar
+  </ion-button>
 </ion-content>
