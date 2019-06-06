@@ -38,11 +38,11 @@ export class AuthService {
         );
     }
 
-    register(fName: String, lName: String, email: String, password: String) {
-        return this.http.post(this.env.API_URL + 'auth/register',
-            { fName: fName, lName: lName, email: email, password: password }
-        );
-    }
+    // register(fName: String, lName: String, email: String, password: String) {
+    //     return this.http.post(this.env.API_URL + 'auth/register',
+    //         { fName: fName, lName: lName, email: email, password: password }
+    //     );
+    // }
 
     logout() {
         const headers = new HttpHeaders({
@@ -60,14 +60,14 @@ export class AuthService {
             );
     }
 
-    user() {
-        return this.http.get<User>(this.env.API_URL + 'auth/user')
-            .pipe(
-                tap(user => {
-                    return user;
-                })
-            );
-    }
+    // user() {
+    //     return this.http.get<User>(this.env.API_URL + 'users')
+    //         .pipe(
+    //             tap(user => {
+    //                 return user;
+    //             })
+    //         );
+    // }
 
     getToken() {
         return this.storage.get('token').then(

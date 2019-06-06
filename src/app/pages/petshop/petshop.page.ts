@@ -10,7 +10,7 @@ import { Petshop } from 'src/app/models/petshop';
 export class PetshopPage implements OnInit {
   type = 'services';
   slideOpts = {
-    initialSlide: 1,
+    initialSlide: 0,
     speed: 400
   };
   

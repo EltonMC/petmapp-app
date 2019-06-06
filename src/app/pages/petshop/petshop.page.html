@@ -8,11 +8,8 @@
 </ion-header>
 <ion-content>
   <ion-slides pager="true" [options]="slideOpts">
-    <ion-slide>
-      <img src="assets/images/atalaia-racoes.jpg" alt="" />
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/images/atalaia-racoes.jpg" alt="" />
+    <ion-slide *ngFor="let image of petshop.images">
+      <img [src]="image.image" alt="" />
     </ion-slide>
   </ion-slides>
   <ion-list class="petshop" lines="none">
