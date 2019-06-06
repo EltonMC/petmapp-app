@@ -7,58 +7,124 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content *ngIf="user" >
   <ion-thumbnail class="avatar">
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    <img
+      [src]="user.photo"
+    />
   </ion-thumbnail>
 
-  <ion-button class="button-avatar pm-button-default" expand="block"> Alterar foto </ion-button>
+  <ion-button class="button-avatar pm-button-default" expand="block">
+    Alterar foto
+  </ion-button>
 
-  <form>
+  <form [formGroup]="perfilForm" >
     <ion-item>
-      <ion-input type="text" placeholder="Nome completo"></ion-input>
+      <ion-input
+        type="text"
+        placeholder="Nome completo"
+        formControlName="name"
+      ></ion-input>
     </ion-item>
+    <input-err
+      [input]="perfilForm.controls.name"
+      msgErr="Nome inválido."
+    ></input-err>
 
     <ion-item>
-      <ion-input type="number" placeholder="Telefone"></ion-input>
+      <ion-input
+        type="number"
+        placeholder="Telefone"
+        formControlName="phone"
+      ></ion-input>
     </ion-item>
-  
+    <input-err
+      [input]="perfilForm.controls.phone"
+      msgErr="Telefone inválido."
+    ></input-err>
+
     <ion-item>
       <ion-label>Genêro</ion-label>
-      <ion-select placeholder="Selecione um">
-        <ion-select-option value="f">Masculino</ion-select-option>
-        <ion-select-option value="m">Feminino</ion-select-option>
+      <ion-select
+        placeholder="Selecione um"
+        formControlName="gender"
+      >
+        <ion-select-option value="male">Masculino</ion-select-option>
+        <ion-select-option value="female">Feminino</ion-select-option>
+        <ion-select-option value="other">Outro</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="perfilForm.controls.gender"
+      msgErr="Gênero inválido."
+    ></input-err>
 
-    <ion-item>
+    <!-- <ion-item>
       <ion-label>Estado</ion-label>
-      <ion-select placeholder="Selecione um">
+      <ion-select placeholder="Selecione um" formControlName="state">
         <ion-select-option value="se">Sergipe</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="perfilForm.controls.state"
+      msgErr="Estado inválido."
+    ></input-err>
 
     <ion-item>
       <ion-label>Cidade</ion-label>
-      <ion-select placeholder="Selecione um">
+      <ion-select placeholder="Selecione um" formControlName="city">
         <ion-select-option value="aracaju">Aracaju</ion-select-option>
       </ion-select>
     </ion-item>
+    <input-err
+      [input]="perfilForm.controls.city"
+      msgErr="Cidade inválidoa"
+    ></input-err>
 
     <ion-item>
-      <ion-input type="text" placeholder="Rua"></ion-input>
+      <ion-input
+        type="text"
+        placeholder="Rua"
+        formControlName="street"
+      ></ion-input>
     </ion-item>
+    <input-err
+      [input]="perfilForm.controls.street"
+      msgErr="Rua inválida."
+    ></input-err> -->
+
+    <!-- <ion-item>
+      <ion-input
+        type="text"
+        placeholder="Mudar senha"
+        formControlName="password"
+      ></ion-input>
+    </ion-item>
+    <input-err
+      [input]="perfilForm.controls.password"
+      msgErr="Senha inválida."
+    ></input-err>
 
     <ion-item>
-      <ion-input type="text" placeholder="Mudar senha"></ion-input>
+      <ion-input
+        type="text"
+        placeholder="Repetir nova senha"
+        formControlName="confirmPassword"
+      ></ion-input>
     </ion-item>
-
-    <ion-item>
-      <ion-input type="text" placeholder="Repetir nova senha"></ion-input>
-    </ion-item>
+    <input-err
+      [input]="perfilForm.controls.confirmPassword"
+      msgErr="Senha inválida."
+    ></input-err> -->
   </form>
 
-  <ion-button class="pm-button-default" expand="block"> Confirmar </ion-button>
-
+  <ion-button
+    class="pm-button-default"
+    expand="block"
+    [disabled]="!perfilForm.valid"
+    (click)="submit(perfilForm.value)"
+  >
+    Confirmar
+  </ion-button>
+  
 </ion-content>

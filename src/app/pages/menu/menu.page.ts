@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-menu',
@@ -7,6 +9,8 @@ import { Router, RouterEvent } from '@angular/router';
   styleUrls: ['./menu.page.scss'],
 })
 export class MenuPage implements OnInit {
+  user: User;
+
   selectedPath = '';
   pages = [
     {
@@ -30,9 +34,12 @@ export class MenuPage implements OnInit {
       url: '/about'
     },
   ];
-  constructor() {
+
+  constructor(private userService: UserService) {
   }
-  ngOnInit() {
+
+  async ngOnInit() {
+    this.user = await this.userService.get();
   }
 
 }

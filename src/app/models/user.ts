@@ -3,6 +3,7 @@ export class User {
     email: string;
     name: string;
     gender: string;
+    phone: string;
     address: {
         id: string,
         cep: string,

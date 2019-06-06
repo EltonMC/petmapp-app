@@ -4,13 +4,11 @@
     <ion-header class="pm-header-menu">
       <ion-toolbar>
         <ion-thumbnail slot="start">
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          <img [src]="user?.photo">
         </ion-thumbnail>
-        <ion-title>Rafael Silva</ion-title>
+        <ion-title>{{ user?.name }}</ion-title>
         <ion-icon name="settings" slot="end" routerLink="/perfil"></ion-icon>
       </ion-toolbar>
-
-
     </ion-header>
 
     <ion-content>

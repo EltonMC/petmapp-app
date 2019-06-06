@@ -14,8 +14,10 @@ export class HomePage implements OnInit {
   type: String = 'shower';
   petshops: Petshop;
 
-  constructor(private petshopService: PetshopService, 
-    private router: Router) { }
+  constructor(
+    private petshopService: PetshopService, 
+    private router: Router) { 
+    }
 
   ngOnInit() {
     this.getPetshops();
