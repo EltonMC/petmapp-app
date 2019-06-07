@@ -1,0 +1,23 @@
+<ion-item>
+    <ion-thumbnail slot="start">
+      <img [src]="reservation.petshop.logo" />
+    </ion-thumbnail>
+    <ion-grid>
+      <ion-row class="row-name name">
+        {{ reservation.petshop.name }}
+      </ion-row>
+      <ion-row class="row-detail">
+        <img src="assets/images/reservation/icon-calendar.png" alt="" />
+        {{ reservation.reservation_day }} - {{ reservation.turn.time_start }}
+        até {{ reservation.turn.time_end }}
+      </ion-row>
+      <ion-row class="row-detail">
+        <img src="assets/images/reservation/icon-paw.png" alt="" />
+        {{ reservation.service.type === "shower" ? "Banho" : "Tosa" }}
+      </ion-row>
+      <ion-row class="row-detail">
+        <img src="assets/images/reservation/icon-dog.png" alt="" />
+        {{ reservation.pet.name }}
+      </ion-row>
+    </ion-grid>
+  </ion-item>

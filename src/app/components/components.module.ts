@@ -6,13 +6,15 @@ import { SubmitErrComponent } from './submit-err/submit-err.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { PetItemComponent } from './pet-item/pet-item.component';
+import { ReservationItemComponent } from './reservation-item/reservation-item.component';
 
 @NgModule({
   declarations: [
     InputErrComponent,
     SubmitErrComponent,
     PetshopItemComponent,
-    PetItemComponent
+    PetItemComponent,
+    ReservationItemComponent
   ],
   imports: [
     CommonModule,
@@ -23,13 +25,15 @@ import { PetItemComponent } from './pet-item/pet-item.component';
     InputErrComponent,
     SubmitErrComponent,
     PetshopItemComponent,
-    PetItemComponent
+    PetItemComponent,
+    ReservationItemComponent
   ],
   entryComponents: [
     InputErrComponent,
     SubmitErrComponent,
     PetshopItemComponent,
-    PetItemComponent
+    PetItemComponent,
+    ReservationItemComponent
   ],
 })
 export class ComponentsModule { }
