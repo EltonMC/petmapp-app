@@ -25,7 +25,7 @@ export class AuthService {
         tap(token => {
           this.storage.set("token", token).then(
             () => {
-              console.log("Token Stored");
+            //   console.log("Token Stored");
             },
             error => console.error("Error storing item", error)
           );
@@ -41,8 +41,7 @@ export class AuthService {
       tap(token => {
         this.storage.set("token", token).then(
           () => {
-            console.log(token);
-            console.log("Token Stored");
+            // console.log("Token Stored");
           },
           error => console.error("Error storing item", error)
         );

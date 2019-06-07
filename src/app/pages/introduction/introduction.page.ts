@@ -1,26 +1,19 @@
-
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { IonSlides } from "@ionic/angular";
 
 @Component({
-  selector: 'app-introduction',
-  templateUrl: './introduction.page.html',
-  styleUrls: ['./introduction.page.scss'],
+  selector: "app-introduction",
+  templateUrl: "./introduction.page.html",
+  styleUrls: ["./introduction.page.scss"]
 })
-
 export class IntroductionPage implements OnInit {
-  @ViewChild('slides') slides: IonSlides;
+  @ViewChild("slides") slides: IonSlides;
   slideIndex: number = 0;
-  slidesOpts = {
-  }    
+  slidesOpts = {};
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    this.slides.getActiveIndex().then(res => {
-      console.log(res);
-    });
-  }
+  ngOnInit() {}
 
   checkIndex() {
     this.slides.getActiveIndex().then(res => {
@@ -28,7 +21,6 @@ export class IntroductionPage implements OnInit {
     });
   }
   nextSlide() {
-    console.log('TESTE');
     this.slides.slideNext();
   }
 }

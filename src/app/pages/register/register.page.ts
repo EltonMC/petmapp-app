@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { EmailValidator } from "src/app/validators/email";
 import { MustMatch } from "../../validators/password";
 import { ViaCepService } from "src/app/services/viacep.service";
-import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 
@@ -108,7 +107,6 @@ export class RegisterPage implements OnInit {
           }
         }
       };
-      console.log(user);
       this.authService.register(user).subscribe(
         () => {
           this.router.navigate(["/menu/home"]);

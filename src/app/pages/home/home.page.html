@@ -26,11 +26,17 @@
 
   <ion-list class="petshop-list" lines="full" *ngIf="type === 'shower'">
     <petshop-item
-      *ngFor="let petshop of petshops"
+      *ngFor="let petshop of shower"
       [petshop]="petshop"
       (click)="toPetshop(petshop)"
     ></petshop-item>
   </ion-list>
 
-  <ion-list *ngIf="type === 'cough'"> </ion-list>
+  <ion-list *ngIf="type === 'cough'">
+      <petshop-item
+      *ngFor="let petshop of cough"
+      [petshop]="petshop"
+      (click)="toPetshop(petshop)"
+    ></petshop-item>
+ </ion-list>
 </ion-content>

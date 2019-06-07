@@ -25,7 +25,6 @@ export class PetshopPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.petshop);
 
   }
 

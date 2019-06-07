@@ -12,7 +12,8 @@ import { Router, NavigationExtras } from '@angular/router';
 export class HomePage implements OnInit {
 
   type: String = 'shower';
-  petshops: Petshop;
+  shower: Petshop;
+  cough: Petshop;
 
   constructor(
     private petshopService: PetshopService, 
@@ -25,8 +26,14 @@ export class HomePage implements OnInit {
 
   async getPetshops() {
     try{
-      const { data, ...meta } = await this.petshopService.getPetshops();
-      this.petshops = data;
+      const { data, ...meta } = await this.petshopService.getPetshops('shower');
+      this.shower = data;
+    } catch {
+      console.log("Err");
+    }
+    try{
+      const { data, ...meta } = await this.petshopService.getPetshops('cough');
+      this.cough = data;
     } catch {
       console.log("Err");
     }

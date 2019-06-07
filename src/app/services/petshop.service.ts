@@ -16,8 +16,8 @@ export class PetshopService {
     ) { }
 
 
-    getPetshops() {
-        return this.httpClient.get<any>(this.env.API_URL + 'petshops').toPromise();
+    getPetshops(type: string = null) {
+        return this.httpClient.get<any>(this.env.API_URL + 'petshops?type=' + type).toPromise();
     }
 
     
