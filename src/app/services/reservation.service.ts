@@ -24,7 +24,7 @@ export class ReservationService {
     }
 
     update(id: string, status: string){
-        return this.httpClient.post(this.env.API_URL + 'reservations/' + id, status);
+        return this.httpClient.put(this.env.API_URL + 'reservations/' + id, { status });
 
     }
 }

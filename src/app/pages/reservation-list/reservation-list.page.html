@@ -18,16 +18,16 @@
   </ion-segment>
 
   <ion-list class="petshop-list" lines="none" *ngIf="type == 'new'">
-    <div class="list" *ngFor="let reservation of reservations">
-        <reservation-item [reservation]="reservation"></reservation-item>
-        <ion-button class="pm-button-default" expand="block">
+    <div class="list" *ngFor="let reservation of reservationsUp">
+      <reservation-item [reservation]="reservation"></reservation-item>
+      <ion-button class="pm-button-default" expand="block" (click)="presentConfirmCancel(reservation.id)">
         Cancelar reserva
       </ion-button>
     </div>
   </ion-list>
 
   <ion-list *ngIf="type == 'last'">
-    <div class="list" *ngFor="let reservation of reservations">
+    <div class="list" *ngFor="let reservation of reservationsDown">
       <reservation-item [reservation]="reservation"></reservation-item>
       <ion-button class="pm-button-default" expand="block">
         Cancelar reserva
