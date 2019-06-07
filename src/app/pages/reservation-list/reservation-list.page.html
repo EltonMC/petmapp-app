@@ -18,100 +18,20 @@
   </ion-segment>
 
   <ion-list class="petshop-list" lines="none" *ngIf="type == 'new'">
-    <div class="list">
-      <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="assets/images/atalaia.png">
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="row-name name">
-            Atalaia Rações
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-calendar.png" alt="">
-            26/05/2019 - Manhã
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-paw.png" alt="">
-            Banho e tosa higiênica
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-dog.png" alt="">
-            Bob
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-user.png" alt="">
-            Rafaela
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-      <ion-button class="pm-button-default" expand="block"> Cancelar reserva </ion-button>
+    <div class="list" *ngFor="let reservation of reservations">
+        <reservation-item [reservation]="reservation"></reservation-item>
+        <ion-button class="pm-button-default" expand="block">
+        Cancelar reserva
+      </ion-button>
     </div>
-
-    <div class="list">
-        <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="assets/images/atalaia.png">
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="row-name name">
-            Atalaia Rações
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-calendar.png" alt="">
-            26/05/2019 - Manhã
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-paw.png" alt="">
-            Banho e tosa higiênica
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-dog.png" alt="">
-            Bob
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-user.png" alt="">
-            Rafaela
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-      <ion-button class="pm-button-default" expand="block"> Cancelar reserva </ion-button>
-    </div>
-
-
   </ion-list>
 
   <ion-list *ngIf="type == 'last'">
-    <div class="list">
-        <ion-item>
-        <ion-thumbnail slot="start">
-          <img src="assets/images/atalaia.png">
-        </ion-thumbnail>
-        <ion-grid>
-          <ion-row class="row-name name">
-            Atalaia Rações
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-calendar.png" alt="">
-            26/05/2019 - Manhã
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-paw.png" alt="">
-            Banho e tosa higiênica
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-dog.png" alt="">
-            Bob
-          </ion-row>
-          <ion-row class="row-detail">
-            <img src="assets/images/reservation/icon-user.png" alt="">
-            Rafaela
-          </ion-row>
-        </ion-grid>
-      </ion-item>
-      <ion-button class="button-success pm-button-default" expand="block"> Reserva efetivada </ion-button>
+    <div class="list" *ngFor="let reservation of reservations">
+      <reservation-item [reservation]="reservation"></reservation-item>
+      <ion-button class="pm-button-default" expand="block">
+        Cancelar reserva
+      </ion-button>
     </div>
-
   </ion-list>
-
 </ion-content>

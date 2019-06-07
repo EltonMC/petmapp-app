@@ -8,106 +8,57 @@
 </ion-header>
 <ion-content>
   <ion-list class="petshop-info petshop" lines="none">
-    <ion-item>
-      <ion-thumbnail slot="start" class="avatar">
-        <img src="assets/images/atalaia.png">
-      </ion-thumbnail>
-      <ion-grid>
-        <ion-row class="row-name name">
-          Atalaia Rações
-        </ion-row>
-        <ion-row class="row-details">
-          <ion-col class="rating">
-            <img src="assets/images/home/icon-rating.png" alt="">
-            4,5
-          </ion-col>
-          <ion-col size="4" class="map">
-            <img src="assets/images/home/icon-pin.png" alt="">
-            Atalaia
-          </ion-col>
-          <ion-col size="6" size-sm class="services">
-            <img src="assets/images/home/icon-pet.png" alt="">
-            183 serviços
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <span class="span-offer" slot="end"> Até 30% </span>
-    </ion-item>
+    <petshop-item [petshop]="petshop"></petshop-item>
   </ion-list>
-
 
   <ion-list class="time-list" lines="full">
     <ion-item>
       <ion-label> Selecione uma data </ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" min="2017" max="2029" [(ngModel)]="date"></ion-datetime>
+      <ion-datetime
+        displayFormat="DD/MM/YYYY"
+        min="2017"
+        max="2029"
+        [(ngModel)]="dateSelected"
+        (ngModelChange)="dateChanged()"
+      ></ion-datetime>
     </ion-item>
   </ion-list>
 
-  <ion-list class="turn-list" lines="none" *ngIf="date">
+  <ion-list class="turn-list" lines="none" *ngIf="turnFiltered">
     <ion-label class="item-title"> Selecione um horário </ion-label>
-    <ion-radio-group [(ngModel)]="turn">
-      <ion-item>
-        <ion-label>Banho - Manhã 8h às 12h </ion-label>
-        <ion-radio slot="start" value="biff" checked></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Banho - Tarde 14h às 18h </ion-label>
-        <ion-radio slot="start" value="griff"></ion-radio>
+    <ion-radio-group [(ngModel)]="turnSelected">
+      <ion-item *ngFor="let turn of turnFiltered" >
+        <ion-label> {{ turn.time_start }} até {{ turn.time_end }} - {{ turn.percent_discount }}%  </ion-label>
+        <ion-radio slot="start" [value]="turn.id" checked></ion-radio>
       </ion-item>
     </ion-radio-group>
   </ion-list>
-  
-  <div *ngIf="turn" class="pet-list">
+
+  <div *ngIf="turnSelected" class="pet-list">
     <ion-list lines="none">
       <ion-label class="item-title"> Selecione um Pet </ion-label>
-      <ion-radio-group [(ngModel)]="pet">
-        <ion-item>
-          <ion-radio slot="start" value="griff" checked></ion-radio>
+      <ion-radio-group [(ngModel)]="petSelected">
+        <ion-item *ngFor="let pet of pets">
+          <ion-radio slot="start" [value]="pet.id" checked></ion-radio>
           <ion-thumbnail slot="start" class="avatar">
-            <img src="assets/images/pet.png">
+            <img src="assets/images/pet.png" />
           </ion-thumbnail>
           <ion-grid>
             <ion-row class="row-name name">
-              Bob
+              {{ pet.name }}
             </ion-row>
             <ion-row class="row-details">
               <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Cachorro
+                <img src="assets/images/home/icon-pet.png" alt="" />
+                {{ pet.type }}
               </ion-col>
               <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Beagle
+                <img src="assets/images/home/icon-pet.png" alt="" />
+                {{ pet.breed }}
               </ion-col>
               <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Macho
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-        <ion-item>
-          <ion-radio slot="start" value="biff"></ion-radio>
-          <ion-thumbnail slot="start" class="avatar">
-            <img src="assets/images/pet.png">
-          </ion-thumbnail>
-          <ion-grid>
-            <ion-row class="row-name name">
-              Bob
-            </ion-row>
-            <ion-row class="row-details">
-              <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Cachorro
-              </ion-col>
-              <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Beagle
-              </ion-col>
-              <ion-col>
-                <img src="assets/images/home/icon-pet.png" alt="">
-                Macho
+                <img src="assets/images/home/icon-pet.png" alt="" />
+                {{ pet.gender === 'male' ? 'Macho' : 'Fêmea'}}
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -115,9 +66,15 @@
       </ion-radio-group>
     </ion-list>
 
-    <ion-button class="pm-button-reverse" expand="block" routerLink="/pet"> Adicionar Pet </ion-button>
-    <ion-button class="pm-button-default" expand="block" routerLink="/menu/home"> Confirmar reserva </ion-button>
-
+    <ion-button class="pm-button-reverse" expand="block" routerLink="/pet">
+      Adicionar Pet
+    </ion-button>
+    <ion-button
+      class="pm-button-default"
+      expand="block"
+      (click)="submit()"
+    >
+      Confirmar reserva
+    </ion-button>
   </div>
-
 </ion-content>

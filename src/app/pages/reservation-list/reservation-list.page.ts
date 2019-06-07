@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservationService } from 'src/app/services/reservation.service';
 
 @Component({
   selector: 'app-reservation-list',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class ReservationListPage implements OnInit {
 
   type: String = 'new';
+  reservations: any;
+  constructor(private reservationService: ReservationService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    const { data, ...meta } = await this.reservationService.get();
+    this.reservations = data;
   }
 
 }

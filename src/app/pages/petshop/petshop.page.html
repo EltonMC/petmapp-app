@@ -20,8 +20,8 @@
     <ion-title class="segment-title"> Serviços </ion-title>
     <ion-list lines="full">
       <ion-item
-        routerLink="/reservation"
         *ngFor="let service of petshop?.services"
+        (click)="selectService(service.id)"
       >
         <span slot="start">
           {{ service.type === "shower" ? "Banho" : "Tosa" }}
