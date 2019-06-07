@@ -43,8 +43,7 @@ export class RegisterPage implements OnInit {
       ],
       email: [
         null,
-        Validators.compose([Validators.email, Validators.required]),
-        EmailValidator.checkEmail
+        Validators.compose([Validators.email, Validators.required])
       ],
       phone: [null, Validators.required],
       gender: [null, Validators.required]
