@@ -27,8 +27,10 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.authService.getToken();
-      if (this.authService.isLoggedIn) { this.router.navigate(['/menu/home']); }
+      this.authService.getToken().then(() => {
+        if (this.authService.isLoggedIn) { this.router.navigate(['/menu/home']); }
+      });
+
     });
   }
 }

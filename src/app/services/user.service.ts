@@ -34,7 +34,7 @@ export class UserService {
     }
 
     update(user: User){
-        return this.httpClient.put<User>(this.env.API_URL + 'users', user).pipe(
+        return this.httpClient.put<any>(this.env.API_URL + 'users', user).pipe(
             tap(res => {
                 this.set(res.data);
                 return res;
@@ -42,7 +42,4 @@ export class UserService {
         );
     }
 
-    register(){
-
-    }
 }
