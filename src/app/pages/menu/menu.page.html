@@ -24,7 +24,7 @@
     </ion-content>
 
     <ion-footer>
-      <ion-item routerLink="/welcome" routerDirection="root">
+      <ion-item (click)="logout()" routerDirection="root">
         <img src="assets/images/configuration/icon-logout.png" slot="start">
         <ion-label>
           Sair
