@@ -28,7 +28,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.authService.getToken().then(() => {
-        if (this.authService.isLoggedIn) { this.router.navigate(['/menu/home']); }
+        if (this.authService.isLoggedIn) { this.router.navigate(['/menu/home'], {replaceUrl: true}); }
       });
 
     });

@@ -9,9 +9,11 @@
 
 <ion-content *ngIf="user" >
   <ion-thumbnail class="avatar">
-    <img
-      [src]="user.photo"
-    />
+    <!-- <img
+      [src]="user?.photo"
+    /> -->
+    <img src="assets/images/user_blank.png" />
+
   </ion-thumbnail>
 
   <ion-button class="button-avatar pm-button-default" expand="block">

@@ -50,7 +50,7 @@ export class LoginPage implements OnInit {
         }
       },
       () => {
-        this.router.navigate(['/menu/home']);
+        this.router.navigate(['/menu/home'], {replaceUrl: true});
       }
     );
   }

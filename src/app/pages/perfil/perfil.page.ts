@@ -10,7 +10,7 @@ import { Router } from "@angular/router";
   styleUrls: ["./perfil.page.scss"]
 })
 export class PerfilPage implements OnInit {
-  private user: User;
+  user: User;
   perfilForm: any;
   constructor(
     private userSevice: UserService,

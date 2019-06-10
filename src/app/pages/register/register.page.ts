@@ -23,7 +23,7 @@ export class RegisterPage implements OnInit {
   public slideTwoForm: FormGroup;
 
   public submitAttempt: boolean = false;
-  private errEmail: boolean = false;
+  public errEmail: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private viacepService: ViaCepService,

@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ["./reservation.page.scss"]
 })
 export class ReservationPage implements OnInit {
-  private petshop: Petshop;
+  public petshop: Petshop;
   private turns;
   private pets: Pet;
   private days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];

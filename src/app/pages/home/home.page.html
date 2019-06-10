@@ -16,13 +16,13 @@
       <ion-label>Tosa</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <ion-item class="search-bar">
+  <!-- <ion-item class="search-bar">
     <ion-icon name="search" slot="start"></ion-icon>
     <ion-input
       placeholder="Buscar por nome, serviço ou endereço..."
     ></ion-input>
     <ion-icon class="icon-filter" name="funnel" slot="end"></ion-icon>
-  </ion-item>
+  </ion-item> -->
 
   <ion-list class="petshop-list" lines="full" *ngIf="type === 'shower'">
     <petshop-item
@@ -32,7 +32,7 @@
     ></petshop-item>
   </ion-list>
 
-  <ion-list *ngIf="type === 'cough'">
+  <ion-list *ngIf="type === 'cough'" lines="full">
       <petshop-item
       *ngFor="let petshop of cough"
       [petshop]="petshop"

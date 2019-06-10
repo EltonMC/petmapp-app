@@ -1,11 +1,17 @@
 {
-  "appId": "io.pet.mapp",
-  "appName": "pet-mapp",
+  "appId": "app.petmapp.io",
+  "appName": "Pet Mapp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
-  "server": {
-    "url": "http://192.168.15.10:8107",
-    "originalUrl": "http://192.168.15.10:8106"
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  },
+  "ios": {
+    "cordovaSwiftVersion": "3.0",
+    "minVersion": "11.3",
+    "cordovaLinkerFlags": ["-ObjC"]
   }
 }
